@@ -23,7 +23,7 @@ requirements:
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
   host:
-    - maturin >=0.11,<0.12
+    - maturin
     - python
     - pip
   run:
