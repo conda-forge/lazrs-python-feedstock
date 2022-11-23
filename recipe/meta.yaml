@@ -1,5 +1,5 @@
 {% set name = "lazrs-python" %}
-{% set version = "0.4.4" %}
+{% set version = "0.4.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/lazrs/lazrs-{{ version }}.tar.gz
-  sha256: db28537a2d4bf530e7a337782c90ade76019fb8be3bf30d81b0425bf8d475909
+  sha256: 10308eba5166a12a88ab1954d1dfe32a39b8bb95da0adc2cbdeceb23af7c4177
 
 build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 1
-  skip: True  # [py<39]
+  number: 0
+  skip: true  # [py<39]
 
 requirements:
   build:
