@@ -8,6 +8,4 @@ test: native_and_emulated
 provider:
   linux_aarch64: default
   linux_ppc64le: default
-github:
-  branch_name: main
-  tooling_branch_name: main
+  
