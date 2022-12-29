@@ -15,6 +15,7 @@ build:
     - {{ PYTHON }} -m pip install . -vv
   number: 1
   skip: true  # [py<39]
+  skip: true  # [ppc64le and python_impl == 'pypy']
 
 requirements:
   build:
