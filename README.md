@@ -1,11 +1,11 @@
-About lazrs-python
-==================
+About lazrs-python-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lazrs-python-feedstock/blob/main/LICENSE.txt)
 
 Home: https://pypi.org/project/lazrs/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lazrs-python-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python bindings for laz-rs
 
