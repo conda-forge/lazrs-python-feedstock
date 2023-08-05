@@ -1,5 +1,5 @@
 {% set name = "lazrs-python" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/lazrs/lazrs-{{ version }}.tar.gz
-  sha256: 7f79477ff161fd2774413130079e11998fcebd2fd2d46cde208dbbc2df9c0d74
+  sha256: 70880bea1c08b106c6ff46076a4eb299c2335100d5de73ef39777686932a849b
 
 build:
   script:
