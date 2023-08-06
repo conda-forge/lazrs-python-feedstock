@@ -13,7 +13,7 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   skip: true  # [py<39]
   skip: true  # [ppc64le and python_impl == 'pypy']
 
@@ -21,7 +21,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - maturin >=0.14,<0.15
+    - maturin >=1.0.0,<2.0.0
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
