@@ -1,5 +1,5 @@
 {% set name = "lazrs-python" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/lazrs/lazrs-{{ version }}.tar.gz
-  sha256: bbaaae8255a67e591e4afae1c4bda7ae10c44729cd4207f7e2c72a82f29a1133
+  sha256: e8581313c8f438b802baf92654bd0fde3cf4ecb8f881bdf4906934344bda3a9b
 
 build:
   script:
@@ -19,17 +19,17 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - maturin >=1.0.0,<2.0.0
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - {{ stdlib("c") }}
     - cargo-bundle-licenses
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - maturin >=1.0.0,<2.0.0
+    - python                                 # [build_platform != target_platform]
   host:
-    - maturin >=0.14,<0.15
-    - python
+    - maturin >=1.0.0,<2.0.0
     - pip
+    - python
   run:
     - python
 
