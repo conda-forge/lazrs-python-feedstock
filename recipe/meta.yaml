@@ -23,10 +23,10 @@ requirements:
     - {{ stdlib("c") }}
     - cargo-bundle-licenses
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - maturin >=1.0.0,<2.0.0
+    - maturin
     - python                                 # [build_platform != target_platform]
   host:
-    - maturin >=1.0.0,<2.0.0
+    - maturin
     - pip
     - python
   run:
