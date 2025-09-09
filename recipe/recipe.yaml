@@ -14,7 +14,7 @@ source:
 
 build:
   number: 1
-  skip: ppc64le and python_impl == 'pypy'
+  skip: ppc64le
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . -vv
@@ -41,11 +41,10 @@ tests:
   - python:
       imports:
         - lazrs
+      pip_check: true
   - requirements:
       run:
         - pip
-    script:
-      - pip check
 
 about:
   summary: Python bindings for laz-rs
