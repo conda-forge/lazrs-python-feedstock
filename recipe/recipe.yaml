@@ -1,0 +1,63 @@
+schema_version: 1
+
+context:
+  name: lazrs-python
+  version: 0.8.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/lazrs/lazrs-${{ version }}.tar.gz
+  sha256: 223ea747140ef374c9cac9cb226aa0fc5bb25988fc2138a24d4152ba819dd38e
+
+build:
+  number: 1
+  skip: ppc64le and python_impl == 'pypy'
+  script:
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+    - ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('rust') }}
+    - ${{ stdlib("c") }}
+    - cargo-bundle-licenses
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - maturin >=1.0.0,<2.0.0
+    - if: build_platform != target_platform
+      then: python
+  host:
+    - maturin >=1.0.0,<2.0.0
+    - pip
+    - python
+  run:
+    - python
+
+tests:
+  - python:
+      imports:
+        - lazrs
+  - requirements:
+      run:
+        - pip
+    script:
+      - pip check
+
+about:
+  summary: Python bindings for laz-rs
+  license: MIT
+  license_file:
+    - THIRDPARTY.yml
+    - LICENSE.txt
+  homepage: https://pypi.org/project/lazrs/
+  repository: https://github.com/laz-rs/laz-rs-python
+
+extra:
+  recipe-maintainers:
+    - hobu
+    - tmontaigu
+    - weiji14
