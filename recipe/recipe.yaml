@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: lazrs-python
-  version: "0.8.1"
+  version: "0.8.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/lazrs/lazrs-${{ version }}.tar.gz
-  sha256: 2be2d481b6ba3e483195012f7a7aebee7898e8688a696448bf3922ef0c7c2f41
+  sha256: 80a30ad1798a9fd58e84f238ca23f5002555ba16553e2afedafa6bde494229e2
 
 build:
   number: 0
