@@ -13,7 +13,7 @@ source:
   sha256: 80a30ad1798a9fd58e84f238ca23f5002555ba16553e2afedafa6bde494229e2
 
 build:
-  number: 0
+  number: 1
   skip: ppc64le
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
