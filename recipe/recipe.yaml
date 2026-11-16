@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: lazrs-python
-  version: "0.8.2"
+  version: "0.9.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/lazrs/lazrs-${{ version }}.tar.gz
-  sha256: 80a30ad1798a9fd58e84f238ca23f5002555ba16553e2afedafa6bde494229e2
+  sha256: 6a5dfeba24da5544580712f687cf2539f797092baa661f4bf057a1ffa3c88746
 
 build:
-  number: 1
+  number: 0
   skip: ppc64le
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
